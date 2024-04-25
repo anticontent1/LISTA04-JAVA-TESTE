@@ -2,6 +2,12 @@ package br.cesul.lista04.ex02;
 
 public class Salesman {
 
+    private static final double CASH_SALES_COMISSION = 0.02;
+    private static final double INSTALLMENT_SALES_COMISSION = 0.02;
+    private static final double BONUS_SENIOR = 0.2;
+    private static final double BONUS_MID = 0.15;
+    private static final double BONUS_JUNIOR = 0.05;
+
     private String name;
     private double salary;
     private double cashSales;
@@ -16,7 +22,29 @@ public class Salesman {
         this.salary = salary;
     }
 
-    public SeniorityLevel getName() {
+
+    public double getFinalSalary() {
+        double finalSalary = salary + (cashSales * CASH_SALES_COMISSION) +
+                (installmentsSales * INSTALLMENT_SALES_COMISSION);
+
+        double totalSales = cashSales + installmentsSales;
+
+        if (totalSales < salesTarget) {
+            return finalSalary;
+        }
+
+        if (seniority == SeniorityLevel.JUNIOR) {
+            return finalSalary + (salary * BONUS_JUNIOR);
+        }
+
+        if (seniority == SeniorityLevel.MIDLEVEL) {
+            return  finalSalary + (salary * BONUS_MID);
+        }
+
+        return finalSalary + (salary * BONUS_SENIOR);
+    }
+
+    public String getName() {
         return name;
     }
 
