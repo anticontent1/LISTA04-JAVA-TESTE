@@ -7,16 +7,16 @@ public class Salesman {
     private double cashSales;
     private double installmentsSales;
     private double salesTarget;
-    private String seniority;
+    private SeniorityLevel seniority;
 
-    public Salesman(String name, String seniority, double salesTarget, double salary) {
+    public Salesman(String name, SeniorityLevel seniority, double salesTarget, double salary) {
         this.name = name;
         this.seniority = seniority;
         this.salesTarget = salesTarget;
         this.salary = salary;
     }
 
-    public String getName() {
+    public SeniorityLevel getName() {
         return name;
     }
 
@@ -36,7 +36,7 @@ public class Salesman {
         return salesTarget;
     }
 
-    public String getSeniority() {
+    public SeniorityLevel getSeniority() {
         return seniority;
     }
 
