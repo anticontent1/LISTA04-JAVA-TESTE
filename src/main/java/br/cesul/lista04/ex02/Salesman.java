@@ -33,15 +33,19 @@ public class Salesman {
             return finalSalary;
         }
 
+        return finalSalary + getBonus();
+    }
+
+    private double getBonus() {
         if (seniority == SeniorityLevel.JUNIOR) {
-            return finalSalary + (salary * BONUS_JUNIOR);
+            return salary * BONUS_JUNIOR;
         }
 
         if (seniority == SeniorityLevel.MIDLEVEL) {
-            return  finalSalary + (salary * BONUS_MID);
+            return  salary * BONUS_MID;
         }
 
-        return finalSalary + (salary * BONUS_SENIOR);
+        return salary * BONUS_SENIOR;
     }
 
     public String getName() {

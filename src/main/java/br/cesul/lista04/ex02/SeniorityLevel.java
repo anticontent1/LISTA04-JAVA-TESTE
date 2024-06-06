@@ -5,6 +5,4 @@ public enum SeniorityLevel {
     JUNIOR,
     MIDLEVEL,
     SENIOR
-
-
 }
